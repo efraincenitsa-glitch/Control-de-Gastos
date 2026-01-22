@@ -2,18 +2,157 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
 <title>Control de Gastos</title>
 <link rel="icon" type="image/png" href="icono.png">
+
 <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+:root{
+  --primary:#0a3d62;
+  --secondary:#1e3799;
+  --success:#38ada9;
+  --danger:#e55039;
+  --bg:#f1f2f6;
+  --card:#ffffff;
+  --text:#2f3640;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial;
+  margin:0;
+  padding:15px;
+  background:var(--bg);
+  color:var(--text);
+}
+h1,h2,h3{margin-top:0}
+.card{
+  background:var(--card);
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:12px;
+  box-shadow:0 6px 15px rgba(0,0,0,.08);
+}
+input,select,button{
+  width:100%;
+  padding:12px;
+  margin-top:8px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+button{
+  background:var(--primary);
+  color:white;
+  border:none;
+}
+button:active{opacity:.9}
+.btn-danger{background:var(--danger)}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+th,td{padding:10px;border-bottom:1px solid #ddd}
+.row{display:flex;flex-wrap:wrap;gap:15px}
+.col{flex:1 1 320px}
+.chart-wrapper{position:relative;height:260px}
+</style>
 </head>
+
 <body>
-<!-- El resto del código es exactamente el que proporcionaste -->
+
+<h1>💳 Control de Gastos</h1>
+
+<div class="card">
+<h2>Registrar movimiento</h2>
+<input id="monto" placeholder="Monto 0.00" inputmode="decimal">
+<select id="tipo">
+  <option value="entrada">Entrada</option>
+  <option value="salida">Gasto</option>
+</select>
+<select id="categoria"></select>
+<button onclick="agregar()">Agregar</button>
+</div>
+
+<div class="card">
+<h2>Movimientos</h2>
+<table>
+<thead>
+<tr><th>Monto</th><th>Tipo</th><th>Categoría</th><th>Fecha</th></tr>
+</thead>
+<tbody id="tabla"></tbody>
+</table>
+</div>
+
+<div class="row">
+<div class="card col">
+<h3>Balance</h3>
+<p>Entradas: <b id="entradas">0</b></p>
+<p>Gastos: <b id="gastos">0</b></p>
+<p>Total: <b id="total">0</b></p>
+</div>
+</div>
+
+<div class="card">
+<h3>Resumen</h3>
+<div class="chart-wrapper">
+<canvas id="grafica"></canvas>
+</div>
+</div>
+
 <script>
-alert("El archivo está listo. Pega aquí el código completo si deseas editarlo.");
+const categorias=["Comida","Transporte","Hogar","Trabajo","Salud","Otros"];
+let movimientos=[];
+let grafica;
+
+const categoria=document.getElementById("categoria");
+categorias.forEach(c=>categoria.innerHTML+=`<option>${c}</option>`);
+
+function guardar(){localStorage.setItem("movs",JSON.stringify(movimientos))}
+function cargar(){const d=localStorage.getItem("movs");if(d)movimientos=JSON.parse(d)}
+
+function agregar(){
+const monto=parseFloat(document.getElementById("monto").value);
+if(!monto)return alert("Monto inválido");
+movimientos.push({
+monto,
+tipo:tipo.value,
+categoria:categoria.value,
+fecha:new Date().toLocaleString()
+});
+guardar();actualizar();
+}
+
+function actualizar(){
+tabla.innerHTML="";
+let e=0,s=0;
+movimientos.forEach(m=>{
+tabla.innerHTML+=`<tr><td>$${m.monto}</td><td>${m.tipo}</td><td>${m.categoria}</td><td>${m.fecha}</td></tr>`;
+m.tipo==="entrada"?e+=m.monto:s+=m.monto;
+});
+entradas.textContent=e.toFixed(2);
+gastos.textContent=s.toFixed(2);
+total.textContent=(e-s).toFixed(2);
+actualizarGrafica();
+}
+
+function actualizarGrafica(){
+const data={};
+movimientos.forEach(m=>{
+data[m.categoria]=(data[m.categoria]||0)+m.monto;
+});
+if(grafica)grafica.destroy();
+grafica=new Chart(document.getElementById("grafica"),{
+type:"doughnut",
+data:{labels:Object.keys(data),datasets:[{data:Object.values(data)}]},
+options:{responsive:true}
+});
+}
+
+cargar();actualizar();
 </script>
+
 </body>
 </html>

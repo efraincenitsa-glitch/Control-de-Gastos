@@ -1,1 +1,0 @@
-console.log("Control de Gastos JS cargado");

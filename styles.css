@@ -1,0 +1,4 @@
+body { font-family: Arial; padding:15px; background:#f4f4f4; }
+.card { background:white; padding:15px; border-radius:8px; margin-bottom:20px; box-shadow:0 0 5px #ccc; }
+button { background:#007bff; color:white; border:none; padding:10px; border-radius:6px; }
+.btn-danger { background:#d9534f; }

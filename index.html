@@ -6,292 +6,82 @@
 <title>Mi Dinero</title>
 
 <!-- iOS Icons -->
-icons/icon-120.png
-icons/icon-152.png
-icons/icon-167.png
-icons/icon-180.png
-icons/icon-1024.png
+<link rel="apple-touch-icon" sizes="120x120" href="icons/icon-120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="icons/icon-167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/icon-180.png">
+<link rel="apple-touch-icon" sizes="1024x1024" href="icons/icon-1024.png">
 
 <!-- iOS App Mode -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Mi Dinero">
 
+
+  
 <style>
 :root{
   --primary:#1e88e5;
-  --primary-dark:#1565c0;
   --danger:#e53935;
-  --success:#2e7d32;
-  --warning:#f9a825;
   --bg:#f2f4f8;
   --card:#ffffff;
   --text:#333;
-  --muted:#777;
-  --border:#dcdfe6;
-  --soft-blue:#e3f2fd;
-  --soft-green:#e8f5e9;
-  --soft-yellow:#fff8e1;
-  --soft-red:#ffebee;
 }
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
   background:var(--bg);
   color:var(--text);
-  padding-bottom:90px;
 }
 header{
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  background:var(--primary);
   color:#fff;
-  padding:22px 18px;
+  padding:20px;
   text-align:center;
-  border-bottom-left-radius:24px;
-  border-bottom-right-radius:24px;
-  box-shadow:0 8px 18px rgba(0,0,0,.18);
 }
-header h1{
-  margin:0;
-  font-size:23px;
-  font-weight:800;
-}
-header h2{
-  margin:10px 0 0;
-  font-size:30px;
-  font-weight:900;
-}
-header p{
-  margin:8px 0 0;
-  font-size:13px;
-  opacity:.9;
-}
-.container{
-  padding:16px;
-}
+header h1{margin:0;font-size:22px}
+header h2{margin:10px 0 0;font-size:28px}
+
+.container{padding:16px}
 .card{
   background:var(--card);
-  border-radius:18px;
+  border-radius:16px;
   padding:16px;
   margin-bottom:16px;
-  box-shadow:0 4px 14px rgba(0,0,0,.09);
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
-.card h3{
-  margin:0 0 12px;
-  font-size:18px;
-}
-.card h4{
-  margin:14px 0 8px;
-  font-size:15px;
-  color:var(--primary-dark);
-}
-label{
-  display:block;
-  margin-top:10px;
-  font-size:13px;
-  font-weight:700;
-  color:#444;
-}
-input,select,button,textarea{
+
+input,select,button{
   width:100%;
   padding:12px;
-  margin-top:8px;
+  margin-top:10px;
   font-size:16px;
   border-radius:12px;
-  border:1px solid var(--border);
-  outline:none;
-  background:#fff;
+  border:1px solid #ccc;
 }
-input:focus,select:focus,textarea:focus{
-  border-color:var(--primary);
-  box-shadow:0 0 0 3px rgba(30,136,229,.12);
-}
+
 button{
   background:var(--primary);
   color:#fff;
   border:none;
-  font-weight:800;
-  cursor:pointer;
 }
-button:active{
-  transform:scale(.99);
-}
-button.danger{
-  background:var(--danger);
-}
-button.success{
-  background:var(--success);
-}
-button.warning{
-  background:var(--warning);
-  color:#222;
-}
-button.secondary{
-  background:#455a64;
-}
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:10px;
-}
-td,th{
-  padding:9px 6px;
-  border-bottom:1px solid #e5e5e5;
-  font-size:14px;
-  vertical-align:top;
-}
-th{
-  text-align:left;
-  color:#555;
-}
-td:last-child,
-th:last-child{
-  text-align:right;
-}
-small{
-  color:var(--muted);
-}
-.badge{
-  display:inline-block;
-  padding:5px 9px;
-  border-radius:999px;
-  font-size:12px;
-  font-weight:800;
-  margin-top:4px;
-}
-.badge.entrada{
-  background:var(--soft-green);
-  color:var(--success);
-}
-.badge.salida{
-  background:var(--soft-red);
-  color:var(--danger);
-}
-.resumen{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-top:10px;
-}
-.resumen-item{
-  border-radius:14px;
-  padding:12px;
-  background:#f7f9fc;
-  border:1px solid #edf0f5;
-}
-.resumen-item span{
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-}
-.resumen-item strong{
-  display:block;
-  margin-top:4px;
-  font-size:18px;
-}
-.semaforo-box{
-  margin-top:14px;
-  border-radius:18px;
-  padding:16px;
-  border:2px solid transparent;
-}
-.semaforo-verde{
-  background:var(--soft-green);
-  border-color:#43a047;
-}
-.semaforo-amarillo{
-  background:var(--soft-yellow);
-  border-color:#fbc02d;
-}
-.semaforo-rojo{
-  background:var(--soft-red);
-  border-color:#e53935;
-}
-.semaforo-gris{
-  background:#eceff1;
-  border-color:#b0bec5;
-}
-.semaforo-titulo{
-  font-size:21px;
-  font-weight:900;
-  margin-bottom:6px;
-}
-.recomendacion{
-  margin-top:8px;
-  line-height:1.45;
-  font-size:14px;
-}
-.lista-simple{
-  margin:8px 0 0;
-  padding-left:18px;
-  font-size:14px;
-}
-.tabs{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin-bottom:16px;
-}
-.tabs button{
-  background:#fff;
-  color:var(--primary-dark);
-  border:1px solid var(--border);
-}
-.tabs button.activo{
-  background:var(--primary);
-  color:#fff;
-  border:none;
-}
-.oculto{
-  display:none;
-}
+button.danger{background:var(--danger)}
+
+table{width:100%;border-collapse:collapse;margin-top:10px}
+td{padding:8px;border-bottom:1px solid #ddd;font-size:14px}
+td:last-child{text-align:right}
+
 .footer{
   position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
+  bottom:0;left:0;right:0;
   background:#fff;
   display:flex;
   gap:10px;
   padding:10px;
-  box-shadow:0 -4px 10px rgba(0,0,0,.12);
-  z-index:10;
+  box-shadow:0 -4px 10px rgba(0,0,0,.1);
 }
-.footer button{
-  flex:1;
-}
-.vacio{
-  padding:12px;
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-}
-.alerta-info{
-  background:var(--soft-blue);
-  border-left:5px solid var(--primary);
-  padding:12px;
-  border-radius:12px;
-  font-size:14px;
-  line-height:1.45;
-}
-@media(max-width:420px){
-  .grid-2{
-    grid-template-columns:1fr;
-  }
-  .resumen{
-    grid-template-columns:1fr;
-  }
-  header h2{
-    font-size:27px;
-  }
-}
+.footer button{flex:1}
 </style>
 </head>
 
@@ -300,176 +90,36 @@ small{
 <header>
   <h1>💳 Mi Dinero</h1>
   <h2 id="balance">$0.00</h2>
-  <p>Control de gastos + rendimiento vehicular</p>
 </header>
 
 <div class="container">
 
-  <div class="tabs">
-    <button id="tabDinero" class="activo" onclick="mostrarSeccion('dinero')">💰 Dinero</button>
-    <button id="tabVehiculo" onclick="mostrarSeccion('vehiculo')">🚗 Vehículo</button>
-  </div>
+<div class="card">
+  <h3>Nuevo movimiento</h3>
+  <input type="number" id="monto" placeholder="Monto">
+  <select id="tipo">
+    <option value="entrada">Entrada</option>
+    <option value="salida">Salida</option>
+  </select>
+  <select id="grupo" onchange="cargarCategorias()"></select>
+  <select id="categoria"></select>
+  <button onclick="agregar()">Agregar</button>
+</div>
 
-  <section id="seccionDinero">
+<div class="card">
+  <h3>Filtros</h3>
+  <input type="date" id="fechaFiltro">
+  <select id="categoriaFiltro"></select>
+  <button onclick="aplicarFiltros()">Aplicar filtros</button>
+  <button onclick="limpiarFiltros()">Limpiar</button>
+</div>
 
-    <div class="card">
-      <h3>Nuevo movimiento</h3>
-
-      <label for="monto">Monto</label>
-      <input type="number" id="monto" placeholder="Ejemplo: 250" min="0" step="0.01">
-
-      <label for="tipo">Tipo</label>
-      <select id="tipo">
-        <option value="entrada">Entrada</option>
-        <option value="salida">Salida</option>
-      </select>
-
-      <label for="grupo">Grupo</label>
-      <select id="grupo" onchange="cargarCategorias()"></select>
-
-      <label for="categoria">Categoría</label>
-      <select id="categoria"></select>
-
-      <button onclick="agregar()">Agregar movimiento</button>
-    </div>
-
-    <div class="card">
-      <h3>Filtros</h3>
-
-      <label for="fechaFiltro">Fecha</label>
-      <input type="date" id="fechaFiltro">
-
-      <label for="categoriaFiltro">Categoría</label>
-      <select id="categoriaFiltro"></select>
-
-      <button onclick="aplicarFiltros()">Aplicar filtros</button>
-      <button class="secondary" onclick="limpiarFiltros()">Limpiar filtros</button>
-    </div>
-
-    <div class="card">
-      <h3>Movimientos</h3>
-      <table>
-        <tbody id="tabla"></tbody>
-      </table>
-    </div>
-
-  </section>
-
-  <section id="seccionVehiculo" class="oculto">
-
-    <div class="card">
-      <h3>🚗 Datos del vehículo</h3>
-
-      <div class="alerta-info">
-        Primero registra tu vehículo. El rendimiento esperado se usa para comparar si el consumo está bien o si ya está gastando demasiada gasolina.
-      </div>
-
-      <label for="vehiculoNombre">Nombre del vehículo</label>
-      <input type="text" id="vehiculoNombre" placeholder="Ejemplo: Versa, March, Hilux, Camioneta">
-
-      <div class="grid-2">
-        <div>
-          <label for="vehiculoMarca">Marca</label>
-          <input type="text" id="vehiculoMarca" placeholder="Ejemplo: Nissan">
-        </div>
-        <div>
-          <label for="vehiculoModelo">Modelo</label>
-          <input type="text" id="vehiculoModelo" placeholder="Ejemplo: Sense">
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div>
-          <label for="vehiculoAnio">Año</label>
-          <input type="number" id="vehiculoAnio" placeholder="Ejemplo: 2020" min="1980" max="2100">
-        </div>
-        <div>
-          <label for="vehiculoTipo">Tipo de vehículo</label>
-          <select id="vehiculoTipo" onchange="sugerirRendimiento()">
-            <option value="compacto">Compacto</option>
-            <option value="sedan">Sedán</option>
-            <option value="suv">SUV</option>
-            <option value="pickup">Pickup</option>
-            <option value="moto">Moto</option>
-            <option value="camioneta">Camioneta de trabajo</option>
-            <option value="personalizado">Personalizado</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div>
-          <label for="rendimientoEsperado">Rendimiento esperado km/l</label>
-          <input type="number" id="rendimientoEsperado" placeholder="Ejemplo: 14" min="1" step="0.1">
-        </div>
-        <div>
-          <label for="ultimaAfinacionKm">Km de última afinación</label>
-          <input type="number" id="ultimaAfinacionKm" placeholder="Ejemplo: 80000" min="0">
-        </div>
-      </div>
-
-      <button class="success" onclick="guardarVehiculo()">Guardar vehículo</button>
-    </div>
-
-    <div class="card">
-      <h3>⛽ Registrar carga de gasolina</h3>
-
-      <label for="vehiculoSeleccionado">Vehículo</label>
-      <select id="vehiculoSeleccionado"></select>
-
-      <div class="grid-2">
-        <div>
-          <label for="kmActual">Kilometraje actual</label>
-          <input type="number" id="kmActual" placeholder="Ejemplo: 85350" min="0">
-        </div>
-        <div>
-          <label for="litrosGasolina">Litros cargados</label>
-          <input type="number" id="litrosGasolina" placeholder="Ejemplo: 35" min="0" step="0.01">
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div>
-          <label for="importeGasolina">Importe pagado</label>
-          <input type="number" id="importeGasolina" placeholder="Ejemplo: 850" min="0" step="0.01">
-        </div>
-        <div>
-          <label for="tipoCombustible">Combustible</label>
-          <select id="tipoCombustible">
-            <option value="Magna">Magna</option>
-            <option value="Premium">Premium</option>
-            <option value="Diésel">Diésel</option>
-            <option value="Otro">Otro</option>
-          </select>
-        </div>
-      </div>
-
-      <label for="fechaCarga">Fecha de carga</label>
-      <input type="date" id="fechaCarga">
-
-      <button onclick="registrarGasolina()">Registrar gasolina y calcular</button>
-    </div>
-
-    <div class="card">
-      <h3>📊 Diagnóstico de consumo</h3>
-      <div id="diagnosticoVehiculo"></div>
-    </div>
-
-    <div class="card">
-      <h3>📋 Historial de gasolina</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Fecha</th>
-            <th>Consumo</th>
-            <th>Rendimiento</th>
-          </tr>
-        </thead>
-        <tbody id="tablaGasolina"></tbody>
-      </table>
-    </div>
-
-  </section>
+<div class="card">
+  <h3>Movimientos</h3>
+  <table>
+    <tbody id="tabla"></tbody>
+  </table>
+</div>
 
 </div>
 
@@ -479,31 +129,19 @@ small{
 
 <script>
 const categorias = {
-  alimentacion:["Desayuno","Comida","Cena","Snacks","Café","Panadería","Tortillas"],
-  transporte:["Uber/Didi","Camión","Estacionamiento","Casetas","Gasolina"],
-  hogar:["Agua Garrafón","Limpieza","Papel Higiénico","Focos","Gas LP"],
-  mandado:["Verduras","Frutas","Carnes","Pan","Refrescos","Mandado"],
-  tecnologia:["Recarga teléfono","Impresiones","Teléfono"],
-  personales:["Aseo personal","Helado","Regalo pequeño","Chivo","Manutención","Mis Gastos","Otros"],
-  trabajo:["Herramientas","Material oficina","Refacciones pequeñas","Nómina"],
-  salud:["Medicinas","Curitas"],
-  ninos:["Lonche escolar","Útiles escolares"],
-  mascotas:["Comida mascota","Arena"]
+alimentacion:["Desayuno","Comida","Cena","Snacks","Café","Panadería","Tortillas"],
+transporte:["Uber/Didi","Camión","Estacionamiento","Casetas","Gasolina"],
+hogar:["Agua Garrafón","Limpieza","Papel Higiénico","Focos","Gas LP"],
+mandado:["Verduras","Frutas","Carnes","Pan","Refrescos","Mandado"],
+tecnologia:["Recarga teléfono","Impresiones","Teléfono"],
+personales:["Aseo personal","Helado","Regalo pequeño","Chivo","Manutención","Mis Gastos","Otros"],
+trabajo:["Herramientas","Material oficina","Refacciones pequeñas","Nómina"],
+salud:["Medicinas","Curitas"],
+ninos:["Lonche escolar","Útiles escolares"],
+mascotas:["Comida mascota","Arena"]
 };
 
-const rendimientoPorTipo = {
-  compacto:16,
-  sedan:14,
-  suv:10,
-  pickup:9,
-  moto:30,
-  camioneta:8,
-  personalizado:12
-};
-
-let movimientos = JSON.parse(localStorage.getItem("movimientos") || "[]");
-let vehiculos = JSON.parse(localStorage.getItem("vehiculos") || "[]");
-let cargasGasolina = JSON.parse(localStorage.getItem("cargasGasolina") || "[]");
+let movimientos = JSON.parse(localStorage.getItem("movimientos")||"[]");
 let filtrados = [];
 
 const grupoSel = document.getElementById("grupo");
@@ -511,33 +149,11 @@ const catSel = document.getElementById("categoria");
 const catFiltro = document.getElementById("categoriaFiltro");
 
 Object.keys(categorias).forEach(g=>{
-  grupoSel.innerHTML += `<option value="${g}">${capitalizar(g)}</option>`;
+  grupoSel.innerHTML += `<option value="${g}">${g}</option>`;
 });
 
-function capitalizar(texto){
-  if(!texto) return "";
-  return texto.charAt(0).toUpperCase() + texto.slice(1);
-}
-
-function fechaHoy(){
-  return new Date().toISOString().split("T")[0];
-}
-
-function formatoDinero(valor){
-  return "$" + Number(valor || 0).toFixed(2);
-}
-
-function guardar(){
-  localStorage.setItem("movimientos", JSON.stringify(movimientos));
-}
-
-function guardarDatosVehiculo(){
-  localStorage.setItem("vehiculos", JSON.stringify(vehiculos));
-  localStorage.setItem("cargasGasolina", JSON.stringify(cargasGasolina));
-}
-
 function cargarCategorias(){
-  catSel.innerHTML = "";
+  catSel.innerHTML="";
   categorias[grupoSel.value].forEach(c=>{
     catSel.innerHTML += `<option>${c}</option>`;
   });
@@ -550,682 +166,64 @@ function cargarFiltroCategorias(){
   });
 }
 
+function guardar(){
+  localStorage.setItem("movimientos",JSON.stringify(movimientos));
+}
+
 function agregar(){
   const monto = parseFloat(document.getElementById("monto").value);
-
-  if(!monto || monto <= 0){
-    alert("Ingresa un monto válido.");
-    return;
-  }
-
+  if(!monto || monto<=0) return;
   movimientos.push({
-    monto:monto,
+    monto,
     tipo:document.getElementById("tipo").value,
-    grupo:grupoSel.value,
     categoria:catSel.value,
-    fecha:fechaHoy(),
-    origen:"manual"
+    fecha:new Date().toISOString().split("T")[0]
   });
-
   guardar();
-
-  document.getElementById("monto").value = "";
-
+  document.getElementById("monto").value="";
   render();
 }
 
 function aplicarFiltros(){
   const f = document.getElementById("fechaFiltro").value;
   const c = catFiltro.value;
-
-  filtrados = movimientos.filter(m=>{
-    return (!f || m.fecha === f) && (!c || m.categoria === c);
-  });
-
+  filtrados = movimientos.filter(m=>(!f||m.fecha===f)&&(!c||m.categoria===c));
   render(true);
 }
 
 function limpiarFiltros(){
-  filtrados = [];
-  document.getElementById("fechaFiltro").value = "";
-  catFiltro.value = "";
+  filtrados=[];
+  document.getElementById("fechaFiltro").value="";
+  catFiltro.value="";
   render();
 }
 
 function borrarTodo(){
-  const confirmar = confirm("¿Seguro que deseas borrar todos los movimientos, vehículos e historial de gasolina?");
-
-  if(confirmar){
-    movimientos = [];
-    vehiculos = [];
-    cargasGasolina = [];
-    filtrados = [];
-
-    localStorage.removeItem("movimientos");
-    localStorage.removeItem("vehiculos");
-    localStorage.removeItem("cargasGasolina");
-
+  if(confirm("¿Borrar todo?")){
+    movimientos=[];
+    guardar();
     render();
-    renderVehiculos();
-    renderDiagnosticoInicial();
-    renderHistorialGasolina();
-
-    alert("Toda la información fue eliminada.");
   }
 }
 
 function render(usandoFiltros=false){
-  const lista = usandoFiltros ? filtrados : movimientos;
+  const lista = usandoFiltros?filtrados:movimientos;
   const tabla = document.getElementById("tabla");
-
-  tabla.innerHTML = "";
-
-  let balance = 0;
-
-  movimientos.forEach(m=>{
-    balance += m.tipo === "entrada" ? m.monto : -m.monto;
+  tabla.innerHTML="";
+  let balance=0;
+  lista.forEach(m=>{
+    balance += m.tipo==="entrada"?m.monto:-m.monto;
+    tabla.innerHTML += `<tr>
+      <td>${m.categoria}<br><small>${m.fecha}</small></td>
+      <td>${m.tipo==="entrada"?"+":"-"}$${m.monto.toFixed(2)}</td>
+    </tr>`;
   });
-
-  if(lista.length === 0){
-    tabla.innerHTML = `
-      <tr>
-        <td colspan="2" class="vacio">No hay movimientos registrados.</td>
-      </tr>
-    `;
-  }
-
-  lista.slice().reverse().forEach(m=>{
-    const signo = m.tipo === "entrada" ? "+" : "-";
-    const clase = m.tipo === "entrada" ? "entrada" : "salida";
-    const nota = m.origen === "gasolina" ? "⛽ Registro automático de gasolina" : "Movimiento manual";
-
-    tabla.innerHTML += `
-      <tr>
-        <td>
-          <strong>${m.categoria}</strong><br>
-          <small>${m.fecha} · ${nota}</small><br>
-          <span class="badge ${clase}">${m.tipo.toUpperCase()}</span>
-        </td>
-        <td>
-          <strong>${signo}${formatoDinero(m.monto)}</strong>
-        </td>
-      </tr>
-    `;
-  });
-
-  document.getElementById("balance").textContent = formatoDinero(balance);
+  document.getElementById("balance").textContent="$"+balance.toFixed(2);
 }
-
-function mostrarSeccion(seccion){
-  const seccionDinero = document.getElementById("seccionDinero");
-  const seccionVehiculo = document.getElementById("seccionVehiculo");
-  const tabDinero = document.getElementById("tabDinero");
-  const tabVehiculo = document.getElementById("tabVehiculo");
-
-  if(seccion === "dinero"){
-    seccionDinero.classList.remove("oculto");
-    seccionVehiculo.classList.add("oculto");
-    tabDinero.classList.add("activo");
-    tabVehiculo.classList.remove("activo");
-  }else{
-    seccionDinero.classList.add("oculto");
-    seccionVehiculo.classList.remove("oculto");
-    tabDinero.classList.remove("activo");
-    tabVehiculo.classList.add("activo");
-    renderVehiculos();
-    renderDiagnosticoInicial();
-    renderHistorialGasolina();
-  }
-}
-
-function sugerirRendimiento(){
-  const tipo = document.getElementById("vehiculoTipo").value;
-  const rendimiento = rendimientoPorTipo[tipo] || 12;
-  document.getElementById("rendimientoEsperado").value = rendimiento;
-}
-
-function guardarVehiculo(){
-  const nombre = document.getElementById("vehiculoNombre").value.trim();
-  const marca = document.getElementById("vehiculoMarca").value.trim();
-  const modelo = document.getElementById("vehiculoModelo").value.trim();
-  const anio = parseInt(document.getElementById("vehiculoAnio").value);
-  const tipo = document.getElementById("vehiculoTipo").value;
-  const rendimientoEsperado = parseFloat(document.getElementById("rendimientoEsperado").value);
-  const ultimaAfinacionKm = parseFloat(document.getElementById("ultimaAfinacionKm").value);
-
-  if(!nombre){
-    alert("Ingresa el nombre del vehículo.");
-    return;
-  }
-
-  if(!rendimientoEsperado || rendimientoEsperado <= 0){
-    alert("Ingresa un rendimiento esperado válido en km/l.");
-    return;
-  }
-
-  const existente = vehiculos.find(v=>v.nombre.toLowerCase() === nombre.toLowerCase());
-
-  if(existente){
-    existente.marca = marca;
-    existente.modelo = modelo;
-    existente.anio = anio || "";
-    existente.tipo = tipo;
-    existente.rendimientoEsperado = rendimientoEsperado;
-    existente.ultimaAfinacionKm = ultimaAfinacionKm || 0;
-  }else{
-    vehiculos.push({
-      id:Date.now(),
-      nombre:nombre,
-      marca:marca,
-      modelo:modelo,
-      anio:anio || "",
-      tipo:tipo,
-      rendimientoEsperado:rendimientoEsperado,
-      ultimaAfinacionKm:ultimaAfinacionKm || 0,
-      creado:fechaHoy()
-    });
-  }
-
-  guardarDatosVehiculo();
-  limpiarFormularioVehiculo();
-  renderVehiculos();
-  renderDiagnosticoInicial();
-
-  alert("Vehículo guardado correctamente.");
-}
-
-function limpiarFormularioVehiculo(){
-  document.getElementById("vehiculoNombre").value = "";
-  document.getElementById("vehiculoMarca").value = "";
-  document.getElementById("vehiculoModelo").value = "";
-  document.getElementById("vehiculoAnio").value = "";
-  document.getElementById("vehiculoTipo").value = "compacto";
-  document.getElementById("rendimientoEsperado").value = rendimientoPorTipo.compacto;
-  document.getElementById("ultimaAfinacionKm").value = "";
-}
-
-function renderVehiculos(){
-  const select = document.getElementById("vehiculoSeleccionado");
-
-  select.innerHTML = "";
-
-  if(vehiculos.length === 0){
-    select.innerHTML = '<option value="">Primero registra un vehículo</option>';
-    return;
-  }
-
-  vehiculos.forEach(v=>{
-    select.innerHTML += `<option value="${v.id}">${v.nombre} ${v.marca ? "- " + v.marca : ""}</option>`;
-  });
-}
-
-function obtenerVehiculoSeleccionado(){
-  const id = document.getElementById("vehiculoSeleccionado").value;
-
-  if(!id) return null;
-
-  return vehiculos.find(v=>String(v.id) === String(id));
-}
-
-function registrarGasolina(){
-  const vehiculo = obtenerVehiculoSeleccionado();
-  const kmActual = parseFloat(document.getElementById("kmActual").value);
-  const litros = parseFloat(document.getElementById("litrosGasolina").value);
-  const importe = parseFloat(document.getElementById("importeGasolina").value);
-  const combustible = document.getElementById("tipoCombustible").value;
-  const fecha = document.getElementById("fechaCarga").value || fechaHoy();
-
-  if(!vehiculo){
-    alert("Primero selecciona o registra un vehículo.");
-    return;
-  }
-
-  if(!kmActual || kmActual <= 0){
-    alert("Ingresa un kilometraje actual válido.");
-    return;
-  }
-
-  if(!litros || litros <= 0){
-    alert("Ingresa los litros cargados.");
-    return;
-  }
-
-  if(!importe || importe <= 0){
-    alert("Ingresa el importe pagado.");
-    return;
-  }
-
-  const cargasDelVehiculo = cargasGasolina
-    .filter(c=>String(c.vehiculoId) === String(vehiculo.id))
-    .sort((a,b)=>a.kmActual - b.kmActual);
-
-  const cargaAnterior = cargasDelVehiculo[cargasDelVehiculo.length - 1];
-
-  if(cargaAnterior && kmActual <= cargaAnterior.kmActual){
-    alert("El kilometraje actual debe ser mayor al último registro: " + cargaAnterior.kmActual + " km.");
-    return;
-  }
-
-let kmRecorridos = 0;
-let rendimiento = 0;
-let costoKm = 0;
-let consumo100Km = 0;
-let precioLitro = 0;
-let porcentajeRendimiento = 0;
-let observacion =
-"Primer registro. Se requiere una segunda carga para generar estadísticas.";
-let estado = "gris";
-
-precioLitro = importe / litros;
-
-if(cargaAnterior){
-
-    kmRecorridos = kmActual - cargaAnterior.kmActual;
-
-    rendimiento = kmRecorridos / litros;
-
-    costoKm = importe / kmRecorridos;
-
-
-    consumo100Km = (litros / kmRecorridos) * 100;
-
-    porcentajeRendimiento =
-      (rendimiento / vehiculo.rendimientoEsperado) * 100;
-
-    estado =
-      obtenerEstadoSemaforo(
-        rendimiento,
-        vehiculo.rendimientoEsperado
-      );
-
-    observacion =
-      generarObservacion(
-        estado,
-        porcentajeRendimiento
-      );
-}
-
-const nuevaCarga = {
-   id:Date.now(),
-   vehiculoId:vehiculo.id,
-   vehiculoNombre:vehiculo.nombre,
-   fecha:fecha,
-   kmActual:kmActual,
-   litros:litros,
-   importe:importe,
-   combustible:combustible,
-   kmRecorridos:kmRecorridos,
-   rendimiento:rendimiento,
-   costoKm:costoKm,
-   precioLitro:precioLitro,
-   consumo100Km:consumo100Km,
-   porcentajeRendimiento:porcentajeRendimiento,
-   observacion:observacion,
-   estado:estado
-};
-
-  cargasGasolina.push(nuevaCarga);
-
-  movimientos.push({
-    monto:importe,
-    tipo:"salida",
-    grupo:"transporte",
-    categoria:"Gasolina",
-    fecha:fecha,
-    origen:"gasolina",
-    vehiculo:vehiculo.nombre
-  });
-
-  guardar();
-  guardarDatosVehiculo();
-
-  limpiarFormularioGasolina();
-  render();
-  renderDiagnostico(nuevaCarga, vehiculo);
-  renderHistorialGasolina();
-
-  alert("Carga registrada correctamente.");
-}
-
-function limpiarFormularioGasolina(){
-  document.getElementById("kmActual").value = "";
-  document.getElementById("litrosGasolina").value = "";
-  document.getElementById("importeGasolina").value = "";
-  document.getElementById("tipoCombustible").value = "Magna";
-  document.getElementById("fechaCarga").value = fechaHoy();
-}
-
-function obtenerEstadoSemaforo(rendimiento, esperado){
-  if(!rendimiento || !esperado) return "gris";
-
-  if(rendimiento >= esperado * 0.90){
-    return "verde";
-  }
-
-  if(rendimiento >= esperado * 0.75){
-    return "amarillo";
-  }
-
-  return "rojo";
-}
-
-function textoEstado(estado){
-  if(estado === "verde") return "🟢 Consumo correcto";
-  if(estado === "amarillo") return "🟡 Consumo bajo, revisar";
-  if(estado === "rojo") return "🔴 Consumo excesivo";
-  return "⚪ Primer registro";
-}
-
-function claseSemaforo(estado){
-  if(estado === "verde") return "semaforo-verde";
-  if(estado === "amarillo") return "semaforo-amarillo";
-  if(estado === "rojo") return "semaforo-rojo";
-  return "semaforo-gris";
-}
-
-function generarObservacion(
-    estado,
-    porcentaje
-){
-
-    if(estado==="verde"){
-        return "Excelente rendimiento. El vehículo trabaja dentro de parámetros normales.";
-    }
-
-    if(estado==="amarillo"){
-        return "El consumo comenzó a aumentar. Conviene revisar filtro de aire, llantas y estilo de manejo.";
-    }
-
-    if(estado==="rojo"){
-        return "Consumo elevado detectado. Se recomienda afinación, revisión de bujías, inyectores y sensores.";
-    }
-
-    return "Primer registro. Se requiere una segunda carga para generar estadísticas.";
-}
-
-function recomendacionPorEstado(estado, kmDesdeAfinacion){
-  if(estado === "verde"){
-    return `
-      <strong>Recomendación:</strong> El consumo está dentro de un rango saludable.
-      Mantén presión correcta de llantas, servicios a tiempo y manejo constante.
-    `;
-  }
-
-  if(estado === "amarillo"){
-    return `
-      <strong>Recomendación:</strong> El consumo empieza a bajar. Conviene revisar:
-      <ul class="lista-simple">
-        <li>Presión de llantas.</li>
-        <li>Filtro de aire.</li>
-        <li>Calidad de gasolina.</li>
-        <li>Carga excesiva en el vehículo.</li>
-      </ul>
-    `;
-  }
-
-  if(estado === "rojo"){
-    return `
-      <strong>Recomendación:</strong> El vehículo está consumiendo demasiada gasolina.
-      Se recomienda hacer afinación o revisión mecánica:
-      <ul class="lista-simple">
-        <li>Cambio de bujías.</li>
-        <li>Cambio de filtros.</li>
-        <li>Limpieza de inyectores.</li>
-        <li>Revisión de sensores.</li>
-        <li>Escaneo OBD.</li>
-        <li>Revisión de presión de llantas.</li>
-      </ul>
-    `;
-  }
-
-  return `
-    <strong>Nota:</strong> Este es el primer registro de gasolina para este vehículo.
-    En la siguiente carga se podrá calcular el rendimiento real en km/l.
-  `;
-}
-
-function renderDiagnostico(carga, vehiculo){
-  const contenedor = document.getElementById("diagnosticoVehiculo");
-  const kmDesdeAfinacion = vehiculo.ultimaAfinacionKm ? carga.kmActual - vehiculo.ultimaAfinacionKm : 0;
-  const mantenimiento = evaluarMantenimiento(kmDesdeAfinacion);
-  const clase = claseSemaforo(carga.estado);
-
-  contenedor.innerHTML = `
-    <div class="semaforo-box ${clase}">
-      <div class="semaforo-titulo">${textoEstado(carga.estado)}</div>
-      <div class="recomendacion">
-        <strong>Vehículo:</strong> ${vehiculo.nombre} ${vehiculo.marca ? "- " + vehiculo.marca : ""} ${vehiculo.modelo || ""}<br>
-        <strong>Kilometraje actual:</strong> ${carga.kmActual.toFixed(0)} km<br>
-<strong>Rendimiento esperado:</strong>
-${vehiculo.rendimientoEsperado.toFixed(1)} km/l<br>
-
-<strong>Rendimiento real:</strong>
-${carga.rendimiento ?
-carga.rendimiento.toFixed(2)+" km/l"
-:
-"Pendiente"}<br>
-
-<strong>Kilómetros recorridos:</strong>
-${carga.kmRecorridos ?
-carga.kmRecorridos.toFixed(0)+" km"
-:
-"Pendiente"}<br>
-
-<strong>Consumo:</strong>
-${carga.consumo100Km ?
-carga.consumo100Km.toFixed(2)+" L/100 km"
-:
-"Pendiente"}<br>
-
-<strong>Precio promedio por litro:</strong>
-${carga.precioLitro ?
-formatoDinero(carga.precioLitro)
-:
-"Pendiente"}<br>
-
-<strong>Costo por kilómetro:</strong>
-${carga.costoKm ?
-formatoDinero(carga.costoKm)
-:
-"Pendiente"}<br>
-
-<strong>Porcentaje vs esperado:</strong>
-${carga.porcentajeRendimiento ?
-carga.porcentajeRendimiento.toFixed(1)+"%"
-:
-"Pendiente"}<br>
-
-<strong>Litros cargados:</strong>
-${carga.litros.toFixed(2)} L<br>
-
-<strong>Importe:</strong>
-${formatoDinero(carga.importe)}<br>
-
-<strong>Combustible:</strong>
-${carga.combustible}<br>
-<br>
-
-<div class="alerta-info">
-   <strong>Observación automática:</strong><br>
-   ${carga.observacion}
-</div>
-        <br>
-        ${recomendacionPorEstado(carga.estado, kmDesdeAfinacion)}
-        <br>
-        ${mantenimiento}
-      </div>
-    </div>
-  `;
-}
-
-function evaluarMantenimiento(kmDesdeAfinacion){
-  if(!kmDesdeAfinacion || kmDesdeAfinacion < 0){
-    return `
-      <div class="alerta-info">
-        No hay referencia suficiente de última afinación. Si conoces el kilometraje, regístralo en los datos del vehículo.
-      </div>
-    `;
-  }
-
-  if(kmDesdeAfinacion >= 10000){
-    return `
-      <div class="semaforo-box semaforo-rojo">
-        <strong>🔴 Afinación recomendada</strong><br>
-        Han pasado ${kmDesdeAfinacion.toFixed(0)} km desde la última afinación registrada.
-      </div>
-    `;
-  }
-
-  if(kmDesdeAfinacion >= 8000){
-    return `
-      <div class="semaforo-box semaforo-amarillo">
-        <strong>🟡 Afinación próxima</strong><br>
-        Han pasado ${kmDesdeAfinacion.toFixed(0)} km desde la última afinación.
-        Ya conviene programar revisión.
-      </div>
-    `;
-  }
-
-  return `
-    <div class="semaforo-box semaforo-verde">
-      <strong>🟢 Afinación en rango</strong><br>
-      Han pasado ${kmDesdeAfinacion.toFixed(0)} km desde la última afinación.
-    </div>
-  `;
-}
-
-function renderDiagnosticoInicial(){
-  const contenedor = document.getElementById("diagnosticoVehiculo");
-
-  if(vehiculos.length === 0){
-    contenedor.innerHTML = `
-      <div class="vacio">
-        Registra tu primer vehículo para comenzar a medir el consumo.
-      </div>
-    `;
-    return;
-  }
-
-  const vehiculoSeleccionado = obtenerVehiculoSeleccionado() || vehiculos[0];
-
-  const ultimaCarga = cargasGasolina
-    .filter(c=>String(c.vehiculoId) === String(vehiculoSeleccionado.id))
-    .sort((a,b)=>b.kmActual - a.kmActual)[0];
-
-  if(!ultimaCarga){
-    contenedor.innerHTML = `
-      <div class="alerta-info">
-        Vehículo seleccionado: <strong>${vehiculoSeleccionado.nombre}</strong><br>
-        Aún no tiene cargas de gasolina registradas.
-      </div>
-    `;
-    return;
-  }
-
-  renderDiagnostico(ultimaCarga, vehiculoSeleccionado);
-}
-
-function renderHistorialGasolina(){
-  const tabla = document.getElementById("tablaGasolina");
-
-  tabla.innerHTML = "";
-
-  if(cargasGasolina.length === 0){
-    tabla.innerHTML = `
-      <tr>
-        <td colspan="3" class="vacio">No hay cargas de gasolina registradas.</td>
-      </tr>
-    `;
-    return;
-  }
-
-  cargasGasolina
-  .slice()
-  .sort((a,b)=>new Date(b.fecha) - new Date(a.fecha))
-  .forEach(c=>{
-
-    tabla.innerHTML += `
-      <tr>
-
-        <td>
-          <strong>${c.fecha}</strong><br>
-          <small>${c.vehiculoNombre}</small>
-        </td>
-
-        <td>
-
-          <strong>Odómetro:</strong>
-          ${c.kmActual.toFixed(0)} km<br>
-
-          <small>
-            Recorridos:
-            ${c.kmRecorridos
-              ? c.kmRecorridos.toFixed(0)
-              : "-"} km
-          </small><br>
-
-          <small>
-            Litros:
-            ${c.litros.toFixed(2)} L
-          </small><br>
-
-<small>
-  Precio/L:
-  ${
-    formatoDinero(
-      c.precioLitro || (c.importe / c.litros)
-    )
-  }
-</small><br>
-
-          <small>
-            Costo/Km:
-            ${c.costoKm
-              ? formatoDinero(c.costoKm)
-              : "-"}
-          </small>
-
-        </td>
-
-        <td>
-
-          <strong>
-            ${c.rendimiento
-              ? c.rendimiento.toFixed(2) + " km/L"
-              : "-"}
-          </strong><br>
-
-          <small>
-            ${c.consumo100Km
-              ? c.consumo100Km.toFixed(2) + " L/100km"
-              : "-"}
-          </small><br>
-
-<small>
-  ${textoEstado(c.estado)}
-</small><br>
-
-<small>
-  ${c.observacion || ""}
-</small>
-
-        </td>
-
-      </tr>
-    `;
-
-  });
-}
-
-document.getElementById("fechaCarga").value = fechaHoy();
 
 cargarCategorias();
 cargarFiltroCategorias();
-sugerirRendimiento();
 render();
-renderVehiculos();
-renderDiagnosticoInicial();
-renderHistorialGasolina();
 </script>
 
 </body>
